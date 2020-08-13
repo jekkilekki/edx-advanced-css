@@ -1,0 +1,267 @@
+/*--------------------------------------------------------------
+# Site Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## About
+--------------------------------------------------------------*/
+.about {
+  /* background: var(--color-white);
+  color: var(--color-bg-dk); */
+  position: relative;
+}
+
+.content-box {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  perspective: 600px;
+}
+
+.about img {
+  width: 160px;
+  border-radius: 160px;
+  position: absolute;
+    left: 50%;
+    top: -160px;
+    transform: translateX(-50%);
+    transition: all 0.3s var(--ease-bounce);
+}
+
+.about img:hover {
+  transform: rotateY(35deg) skew(-20deg) rotateZ(-20deg) translateX(-10rem) translateY(-4rem) rotateX(5deg);
+    border-radius: 15px;
+    box-shadow: -4px 4px 20px black;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.about h2 {
+  display: block;
+    margin-top: -3rem;
+    font-size: var(--h5);
+  text-align: center;
+}
+
+.about-text {
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 54rem) {
+  .about-text {
+    padding: 0 4rem;
+  }
+}
+
+/*--------------------------------------------------------------
+## Course Sections
+--------------------------------------------------------------*/
+.class-section .card-front,
+.class-section .card-back {
+  padding: 4rem;
+}
+
+.class-section:hover {
+  cursor: pointer;
+}
+
+.class-section .sub-section-title {
+  font-size: var(--h6);
+  line-height: var(--h5);
+}
+
+.class-section-grid {
+	display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 300px);
+  width: 100%;
+  background: var(--color-text);
+  text-shadow: var(--text-shadow-strong);
+}
+
+.class-section-grid section:first-child {
+	/* grid-column: span 3; */
+}
+
+.class-section-grid .section-zero {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.section-zero .card-front,
+.section-zero .card-back {
+  background: var(--color-text);
+}
+
+.class-section-grid .section-one {
+  grid-row: span 2;
+}
+
+.section-one .card-front,
+.section-one .card-back {
+  background: var(--color-purple-dk);
+}
+
+.section-one a {
+  color: var(--color-neon);
+}
+
+.class-section-grid .section-two .card-front,
+.section-two .card-back {
+  background: var(--color-bg-dk);
+}
+
+.class-section-grid .section-three .card-front,
+.section-three .card-back {
+  background: var(--color-blue);
+}
+
+.class-section-grid .section-four .card-front,
+.section-four .card-back {
+  background: var(--color-bg-dk);
+}
+
+.class-section-grid .section-five .card-front,
+.section-five .card-back {
+  background: var(--color-blue-dk);
+}
+
+.class-section-grid .section-six {
+  grid-column: span 2;
+}
+
+.section-six .card-front,
+.section-six .card-back {
+  background: var(--color-text);
+}
+
+.class-section-grid .first-chapter .card-front,
+.class-section-grid .first-chapter .card-back {
+  background: var(--bg-gradient-img);
+}
+
+.class-section-grid .final-chapter .card-front,
+.class-section-grid .final-chapter .card-back {
+  background: url(https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg) 0 0 repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+@media screen and (max-width: 72rem) { /* tablet size */
+	.class-section-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .class-section-grid .section-zero,
+  .class-section-grid .section-one {
+    grid-row: span 1;
+  }
+}
+
+@media screen and (max-width: 54rem) { /* phone size */
+	.class-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 300px);
+  }
+
+  .class-section-grid .section-zero {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  .class-section-grid,
+  .class-section {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+
+  .class-section-grid .section-zero,
+  .class-section-grid .section-one,
+  .class-section-grid .section-two,
+  .class-section-grid .section-three,
+  .class-section-grid .section-four,
+  .class-section-grid .section-five,
+  .class-section-grid .section-six {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+.card {
+  /* width: 200px; */
+  /* height: 300px; */
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  /* background: url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Falishagrauso%2Ffiles%2F2016%2F05%2Fcaptain-america-vs-iron-man-image-1600x1200-1200x900.jpg);
+  background-size: cover; */
+}
+
+.card-back {
+  /* background: blue; */
+  transform: rotateY(180deg);
+  /* background: url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Falishagrauso%2Ffiles%2F2016%2F05%2Fcaptain-america-vs-iron-man-image-1600x1200-1200x900.jpg);
+  background-size: cover;
+  background-position: top left 599px; */
+}
+
+.card-inner:hover {
+  transform: rotateY(-180deg);
+}
+
+.course-slides {
+  max-width: 90%;
+  margin: 0 auto;
+  display: inline-block;
+  /* border: 5px solid var(--color-text); */
+  /* border-radius: 7px; */
+  border: 15px solid transparent;
+  border-image: url(https://thumbs.dreamstime.com/b/printed-circuit-board-black-white-computer-technology-square-frame-template-vector-printed-circuit-board-black-white-128388827.jpg)
+    100 round;
+}
+
+.course-slides:before {
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: rotate(-7deg);
+    background: var(--color-text);
+    top: 0rem;
+}
+
+.course-slides:after {
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    transform: rotate(-14deg);
+    background: var(--color-white);
+    top: 0rem;
+}
+
+.course-slides img {
+  filter: hue-rotate(36deg) opacity(0.75) drop-shadow(2px 4px 6px black) brightness(1.5);
+}

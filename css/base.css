@@ -1,0 +1,384 @@
+/*--------------------------------------------------------------
+# Document Base Styles
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## CSS Reset
+--------------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, img {
+	display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*--------------------------------------------------------------
+## CSS Variables (root)
+--------------------------------------------------------------*/
+ :root {
+	 /* Screen widths */
+	--wide: 128rem; /* 320px diff */
+	--desktop: 96rem; /* 240px diff */
+	--tablet: 72rem; /* 180px diff */
+	--phone: 54rem;
+
+	/* Colors */
+  --color-text: #efefef;
+  --color-white: #ffffff;
+  --color-bg: #151025; /* #050060 - darker */
+  --color-bg-dk: #050060; /* rgb(5, 0, 96); */
+  --color-purple-rgb: rgba(164, 88, 255, 1); /* #d392ff? */
+  --color-purple-dk: #a458ff;
+  --color-purple: #d392ff;
+  --color-blue-rgb: rgba(53, 68, 255, 1); /* #3544ff? */
+  --color-blue: #3544ff;
+  --color-blue-dk-rgb: rgba(10, 47, 158, 1); /* #0a2f9e? */
+  --color-blue-dk: #0a2f9e;
+  --color-neon-dk: #24d6ff;
+  --color-neon: #00ffff;
+  --color-yellow: #f5b81b;
+  --color-gray: #585963;
+
+  /* Gradients */
+  --bg-gradient: linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  --bg-gradient-img: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  --bg-gradient-reverse: linear-gradient(
+      60deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  --bg-gradient-img-reverse: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      60deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+
+  /* Shadows */
+  --text-shadow: 1px 2px 4px rgba(5, 0, 96, 0.5);
+  --text-shadow-strong: 1px 1px 3px rgba(5, 0, 96, 0.85);
+
+	/* Text sizes */
+	--base-size: 1.6rem;
+	--type-scale: 1.33;
+	--small: var(--base-size);
+	--body: calc( var(--base-size) * var(--type-scale) );
+	--h6: calc( var(--body) * var(--type-scale) );
+	--h5: calc( var(--h6) * var(--type-scale) );
+	--h4: calc( var(--h5) * var(--type-scale) );
+	--h3: calc( var(--h4) * var(--type-scale) );
+	--h2: calc( var(--h3) * var(--type-scale) );
+  --h1: calc( var(--h2) * var(--type-scale) );
+  
+  /* Easings */
+  --ease-bounce: cubic-bezier(.75,-0.5,0,1.75);
+}
+
+/*--------------------------------------------------------------
+## Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/*--------------------------------------------------------------
+## Layout
+--------------------------------------------------------------*/
+html {
+	/* 1rem = 10px */
+  font-size: 62.5%;
+	scroll-behavior: smooth;
+	
+	/* Border Box Fix */
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  position: relative;
+}
+
+body {
+  font-size: var(--base-size);
+  font-family: Muli, Mulish;
+  margin: 0;
+  background: #151025;
+  background: var(--color-bg-dk);
+  color: #efefef;
+  color: var(--color-text);
+	font-family: "Muli", "Mulish", sans-serif;
+}
+
+/*--------------------------------------------------------------
+## Typography
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+h1 {
+  font-size: var(--h1);
+  line-height: calc( var(--h1) * var(--type-scale) );
+}
+
+h2 {
+  font-size: var(--h2);
+  line-height: calc( var(--h2) * var(--type-scale) );
+}
+
+h3 {
+  font-size: var(--h3);
+  line-height: calc( var(--h3) * var(--type-scale) );
+}
+
+h4 {
+  font-size: var(--h4);
+  line-height: calc( var(--h4) * var(--type-scale) );
+}
+
+h5 {
+  font-size: var(--h5);
+  line-height: calc( var(--h5) * var(--type-scale) );
+}
+
+h6 {
+  font-size: var(--h6);
+  line-height: calc( var(--h6) * var(--type-scale) );
+}
+
+p {
+  font-size: var(--body);
+  line-height: calc( var(--body) * var(--type-scale) );
+  margin-bottom: var(--body);
+}
+
+small,
+.small-text {
+  font-size: var(--base-size);
+  line-height: calc( var(--base-size) * var(--type-scale) );
+}
+
+@media screen and (max-width: 72rem) { /* tablet size */
+	:root{
+		--type-scale: 1.25;
+	}
+}
+
+@media screen and (max-width: 56rem) { /* phone size */
+	:root{
+		--type-scale: 1.15;
+	}
+}
+
+strong {
+  font-variation-settings: 'wght' 700;
+}
+
+em {
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
+## Elements
+--------------------------------------------------------------*/
+.ra {
+  color: var(--color-yellow);
+  -webkit-text-fill-color: var(--color-yellow);
+}
+
+ol,
+ul {
+  line-height: var(--body);
+}
+
+.section-title {
+	font-size: var(--h3);
+  color: white;
+  background: linear-gradient(
+    240deg,
+    rgba(164, 88, 255, 1) 0%,
+    rgba(53, 68, 255, 1) 40%,
+    rgba(10, 47, 158, 1) 80%
+  );
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+
+  margin: -6rem -6rem 3rem;
+  padding: 6rem;
+}
+
+.section-title span {
+  font-size: 60%;
+  opacity: 0.6;
+}
+
+.sub-section-title {
+	font-size: var(--h4);
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.sub-section-title:before {
+  left: -2rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: initial;
+}
+
+.sub-section-title span {
+  font-size: 50%;
+  -webkit-text-fill-color: gray;
+  opacity: 50%;
+}
+
+.sub-section-title.white {
+  color: var(--color-text);
+  -webkit-text-fill-color: var(--color-text);
+  margin-bottom: 1.6rem;
+}
+
+.site-title {
+  font-weight: 900;
+  color: var(--color-yellow);
+}
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: rgba(10, 47, 158, 1);
+  color: var(--color-neon);
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: rgba(53, 68, 255, 1);
+}
+
+a:visited {
+  color: rgba(164, 88, 255, 1);
+  color: var(--color-neon);
+}
+
+a.btn {
+  font-size: var(--body);
+  padding: 0.8rem 2.4rem;
+  border: 2px solid var(--color-neon);
+  color: var(--color-neon);
+  border-radius: 100px;
+  position: absolute;
+  left: 50%;
+  bottom: 3.2rem;
+  transform: translateX(-50%);
+}

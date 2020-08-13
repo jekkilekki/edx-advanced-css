@@ -1,110 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Lexend+Deca&display=swap');
-
-body {
-	background: #121212;
-	color: #efefef;
-	font-family: "Muli", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Lexend Deca', sans-serif;
-}
-
-h1 {
-	font-size: 5rem;
-}
-
-h2 {
-	font-size: 4.4rem;
-}
-
-h3 {
-	font-size: 3.6rem;
-}
-
-h4 {
-	font-size: 2.8rem;
-}
-
-h5 {
-	font-size: 2.4rem;
-}
-
-h6 {
-	font-size: 2rem;
-}
-
-p {
-	font-size: 1.6rem;
-}
-
-@media screen and (max-width: 800px) { /* tablet size */
-	h1 {
-		font-size: 4rem;
-	}
-	
-	h2 {
-		font-size: 3.6rem;
-	}
-	
-	h3 {
-		font-size: 3.2rem;
-	}
-	
-	h4 {
-		font-size: 2.8rem;
-	}
-	
-	h5 {
-		font-size: 2.4rem;
-	}
-	
-	h6 {
-		font-size: 2rem;
-	}
-	
-	p {
-		font-size: 1.2rem;
-	}
-}
-
-@media screen and (max-width: 500px) { /* phone size */
-	h1 {
-		font-size: 3rem;
-	}
-	
-	h2 {
-		font-size: 2.7rem;
-	}
-	
-	h3 {
-		font-size: 2.4rem;
-	}
-	
-	h4 {
-		font-size: 1.8rem;
-	}
-	
-	h5 {
-		font-size: 1.4rem;
-	}
-	
-	h6 {
-		font-size: 1rem;
-	}
-	
-	p {
-		font-size: 1rem;
-	}
-}
-
-.content {
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 5rem 2.5rem 10rem;
-}
+/*
+Repo Name: Eduonix Advanced CSS Course
+Repo URI: https://github.com/jekkilekki/edx-advanced-css
+Author: Aaron Snowberger
+Author URI: https://aaron.kr
+Description: A sample website built utilizing the principles learned in the Advanced CSS Course.
+Version: 1.0.1
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+*/
+/*--------------------------------------------------------------
+>>> SPECIFIC SITE COMPONENTS:
+----------------------------------------------------------------
+#0 CSS Review                       --------------
+  # :pseduo-selectors                 <<< OK >>> :root, :before, :after, :hover, :visited, :nth-child(even), :checked, 
+  # Responsive design                 <<< OK >>>
+  # CSS variables                     <<< OK >>>
+#1 Typography                       --------------
+  # Locally hosted font               <<< OK >>>
+  # Variable font                     <<< OK >>>
+  # Text clipping                     <<< OK >>>
+  # Text transforms                   <<< OK >>>
+  # Responsive text                   <<< OK >>>
+#2 Content                          --------------
+  # Pure CSS Accordion (tabs)         <<< OK >>>
+  # Advanced List styles              <<< OK >>>
+  # Off canvas navigation (checkbox)  <<< OK >>>
+#3 Graphics                         --------------
+  # Backgrounds & gradients           <<< OK >>>
+  # CSS border images                 <<< OK >>>
+  # CSS image filters                 <<< OK >>>
+  # Responsive images                 <<< OK >>>
+#4 Layout                           --------------
+  # CSS Flexbox                       <<< OK >>>
+  # CSS Grid                          <<< OK >>>
+#5 Motion                           --------------
+  # 2D transforms                     <<< OK >>>
+  # 3D transforms (on hover)          <<< OK >>>
+  # Animations (on hover)             <<< OK >>>
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Document Base Styles
+  # CSS Reset
+  # CSS Variables (root)
+  # Accessibility
+  # Layout
+  # Typography
+  # Elements
+  # Links
+# Content navigation
+  # Social navigation
+# Header
+	# Top Bar
+	# Hero
+# Site Content
+  # About
+  # Course Sections
+# Footer
+--------------------------------------------------------------*/

@@ -1,0 +1,209 @@
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Top Bar
+--------------------------------------------------------------*/
+ header.top-bar {
+  background: var(--color-purple-dk);
+  background: var(--bg-gradient-img);
+  color: var(--color-yellow);
+  padding: 1rem 4rem;
+  text-align: center;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  background: url(https://cdn.eduonix.com/assets/images/logo_sprite.png) 0 0 no-repeat;
+  width: 110px;
+  height: 30px;
+  float: left;
+  margin-right: 1rem;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.left span {
+  display: inline-block;
+  line-height: 36px;
+}
+
+.top-bar a {
+  color: var(--color-white);
+}
+
+@media screen and (max-width: 54rem) {
+  .center {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .left span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 42rem) {
+  .right {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+## Hero
+--------------------------------------------------------------*/
+.hero {
+  height: 100vh;
+  /* background: url(https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg);
+  background-position: center;
+  background-size: cover; */
+  transform: skewY(7deg) translateY(-15vh);
+  overflow: hidden;
+  perspective: 400px;
+}
+
+.hero a {
+  color: var(--color-purple);
+}
+
+.hero a:visited {
+  color: var(--color-purple-dk);
+}
+
+.hero:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* top: -50%;
+  left: -50%; */
+  z-index: -1;
+  background: url(https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg) 0 0 repeat;
+  /* background: url(img/Advanced\ CSS.jpg) 0 0 repeat; */
+  /* filter: hue-rotate(90deg) sepia(0.6); */
+  background-size: cover;
+  background-position: center;
+  transform: skewY(-7deg) translateY(15vh);
+}
+
+.hero-content {
+  transform: skewY(-7deg) translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  text-align: center;
+  text-shadow: var(--text-shadow);
+  width: 80%;
+  transition: all 0.3s var(--ease-bounce);
+  transform-style: preserve-3d;
+}
+
+.hero-content:hover {
+  transform: scale(1.1) translate(-35%, -35%) skewY(-7deg) rotateY(15deg) rotateX(-10deg);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 72rem) {
+  .site-title {
+    font-size: calc(var(--h1) * var(--type-scale));
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 56rem) {
+  .site-title {
+    font-size: calc(var(--h1) * 1.5);
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 44rem) {
+  .site-title {
+    font-size: calc(var(--h1) * 1.25);
+    margin-bottom: 3rem;
+  }
+}
+
+.site-subtitle {
+  padding: 3rem 0;
+  margin: 1rem auto 3rem;
+  position: relative;
+  width: 80%;
+}
+
+.site-subtitle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-white);
+  box-shadow: var(--text-shadow);
+}
+
+.site-subtitle:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-white);
+  box-shadow: var(--text-shadow);
+}
+
+.hero-content:hover .site-under-title {
+  transform: rotateY(-30deg) rotateZ(-5deg) translate(-20%, 0) scale(1.1);
+}
+
+.🧂 {
+  width: 3.6rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .🧂 {
+    width: 2rem;
+  }
+}
+
+.hero-content span {
+  display: inline-block;
+  /* margin-left: -2rem; */
+}
+
+.hero-content:hover span {
+  animation-name: wiggle;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.hero-content:hover span:nth-child(even) {
+  animation-delay: 0.15s;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translate(0, 0px) rotate(-5deg);
+    text-shadow: 10px 10px 3px rgba(0,0,0,0.1);
+  }
+  65% {
+      transform: translate(0, 10px) rotate(5deg) scale(1.1);
+      text-shadow: -10px -10px 3px rgba(0,0,0,0.1);
+  }
+  100% {
+      transform: translate(0, 0px) rotate(-5deg);
+      text-shadow: 10px 10px 3px rgba(0,0,0,0.1);
+  }
+}
