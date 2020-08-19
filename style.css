@@ -1,0 +1,103 @@
+body {
+	color: rgb(239, 239, 239);
+	font-family: Muli, sans-serif;
+	background: rgb(18, 18, 18);
+}
+
+.content {
+	max-width: 1000px;
+	margin: 0px auto;
+	padding: 5rem 2.5rem 10rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Lexend Deca", sans-serif;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 4.4rem;
+}
+
+h3 {
+	font-size: 3.6rem;
+}
+
+h4 {
+	font-size: 2.8rem;
+}
+
+h5 {
+	font-size: 2.4rem;
+}
+
+h6 {
+	font-size: 2rem;
+}
+
+p {
+	font-size: 1.6rem;
+}
+
+@media screen and (max-width: 800px) {
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 3.6rem;
+	}
+
+	h3 {
+		font-size: 3.2rem;
+	}
+
+	h4 {
+		font-size: 2.8rem;
+	}
+
+	h5 {
+		font-size: 2.4rem;
+	}
+
+	h6 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	h1 {
+		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2.7rem;
+	}
+
+	h3 {
+		font-size: 2.4rem;
+	}
+
+	h4 {
+		font-size: 1.8rem;
+	}
+
+	h5 {
+		font-size: 1.4rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+}
