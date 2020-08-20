@@ -1,0 +1,222 @@
+/*------------------------------------------------
+# Content Navigation
+------------------------------------------------*/
+.nav-title {
+	font-size: 1.6rem;
+	line-height: 2rem;
+	margin: 4.2rem 0 1.6rem;
+	padding: 0 1rem;
+	color: white;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Accordion styles */
+.tabs {
+  overflow: hidden;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Icon */
+.tab-label:hover {
+  opacity: 0.8;
+}
+
+.tab-label:after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.tab-content {
+  max-height: 0px;
+  padding: 0 1em;
+	color: #efefef;
+  transition: all 0.35s;
+}
+
+.tab-content ol,
+.tab-content ul {
+	margin: 0;
+	margin-left: 1rem;
+	padding: 0;
+	line-height: 2;
+}
+
+.tab-content li {
+	counter-increment: step;
+}
+
+.tab-content li:before {
+	content: counter(step);
+	background: #d392ff;
+	border-radius: 5px;
+	padding: 0 5px;
+	color: white;
+	transform: rotate(-10deg);
+	left: -2.6em;
+	font-size: 0.8em;
+	line-height: 1.8em;
+}
+
+/* :checked */
+input:checked + .tab-label {
+  background: rgba(10, 47, 158, 1);
+}
+
+input:checked + .tab-label:after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1rem;
+}
+
+/*------------------------------------------------
+## Off-screen navigation
+------------------------------------------------*/
+.site-main {
+	min-height: 100%;
+	min-width: 100%;
+	background: white;
+	position: relative;
+	top: 0;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+}
+
+.navicon {
+	color: #101525;
+	left: .25rem;
+	height: 3rem;
+	position: fixed;
+	top: .25rem;
+	width: 3rem;
+	z-index: 20;
+	transform: rotate(90deg);
+	transition: 0.3s all ease-in-out;
+}
+
+.navicon:before,
+.navicon:after {
+	background: transparent;
+	border-bottom: 2px solid #101525;
+	border-top: 1px solid #101525;
+	content: '';
+	height: 7px;
+	position: fixed;
+	left: .5rem;
+	top: 1.25rem;
+	width: 55%;
+	transition: 0.3s all ease-in-out 0.3s;
+}
+
+.navicon:before {
+	transform: rotate(90deg);
+}
+
+.navicon:after {
+	left: 1.0625rem;
+	transform: rotate(-90deg);
+}
+
+.nav-check {
+	cursor: pointer;
+	left: 0.25rem;
+	height: 3rem;
+	opacity: 0;
+	position: fixed;
+	top: 0.25rem;
+	width: 3rem;
+	z-index: 21;
+	transition: 0.3s all ease-in-out;
+}
+
+.nav-check:checked + .navicon:before,
+.nav-check:checked + .navicon:after {
+	background: #101525;
+	border: none;
+	height: 2px;
+	left: 0.6875rem;
+	top: 1.5rem;
+	transition: 0.3s all ease-in-out 0.3s;
+}
+
+.nav-check:checked + .navicon:before {
+	transform: rotate(45deg);
+}
+
+.nav-check:checked + .navicon:after {
+	transform: rotate(-45deg);
+}
+
+.nav-check:checked ~ nav {
+	left: 0;
+	transition: 0.3s all ease-in-out;
+}
+
+nav.site-navigation {
+	width: 100%;
+	max-width: 320px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	overflow-y: scroll;
+	background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+}
+
+/* Make the magic happen */
+.site-main {
+	transition: left 0.2s;
+}
+
+.nav-check:checked + .navicon,
+.nav-check:checked {
+	left: 2px;
+}
+
+.nav-check:checked ~ .site-main {
+	left: 300px;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.site-main {
+	width: 100vw;
+	height: 100vh;
+	background: white;
+}
+
+body {
+	overflow-x: hidden;
+}
