@@ -4,29 +4,92 @@
 	<title>Advanced CSS</title>
 	<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&amp;display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 	<link href="rpg-awesome/css/rpg-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/content.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
-	<main class="site-main">
-		<article class="content">
-			<h1><i class="fab fa-twitter"></i> Header 1</h1>
-			<h2><i class="fas fa-eye"></i> Header 2</h2>
-			<h3><i class="ra ra-sword"></i> Header 3</h3>
-			<h4><i class="ra ra-alligator-clip"></i> Header 4</h4>
-			<h5><i class="ra ra-wolf-head"></i> Header 5</h5>
-			<h6><i class="ra ra-zebra-shield"></i> Header 6</h6>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-				culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</article>
-	</main>
+	<!-- Off-canvas navigation -->
+	<input type="checkbox" name="nav" class="nav-check" id="off-canvas">
+	<label rel="navigation" class="navicon" for="off-canvas"></label>
+	<nav class="site-navigation" role="navigation">
+		<h2 class="nav-title">Course Contents</h2>
+		<div class="tabs">
+			<div class="tab">
+				<input type="checkbox" id="chck0">
+				<label class="tab-label" for="chck0">0: CSS Review</label>
+				<div class="tab-content">
+					<ol>
+						<li>:pseudo-selectors</li>
+						<li>Responsive design</li>
+						<li>CSS variables</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tab">
+				<input type="checkbox" id="chck1">
+				<label class="tab-label" for="chck1">1: Typography</label>
+				<div class="tab-content">
+					<ol>
+						<li>Locally hosted font</li>
+						<li>Variable font</li>
+						<li>Text clipping</li>
+						<li>Text transforms</li>
+						<li>Responsive text</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tab">
+				<input type="checkbox" id="chck2">
+				<label class="tab-label" for="chck2">2: Content</label>
+				<div class="tab-content">
+					<ol>
+						<li>Pure CSS Accordion (tabs)</li>
+						<li>Advanced List styles</li>
+						<li>Off-canvas navigation (checkbox)</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tab">
+				<input type="checkbox" id="chck3">
+				<label class="tab-label" for="chck3">3: Graphics</label>
+				<div class="tab-content">
+					<ol>
+						<li>Backgrounds &amp; gradients</li>
+						<li>CSS border images</li>
+						<li>CSS image filters</li>
+						<li>Responsive images</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tab">
+				<input type="checkbox" id="chck4">
+				<label class="tab-label" for="chck4">4: Layout</label>
+				<div class="tab-content">
+					<ol>
+						<li>CSS Flexbox</li>
+						<li>CSS Grid</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tab">
+				<input type="checkbox" id="chck5">
+				<label class="tab-label" for="chck5">5: Motion</label>
+				<div class="tab-content">
+					<ol>
+						<li>2D transforms</li>
+						<li>3D transforms (on hover)</li>
+						<li>Animations (on hover)</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</nav>
 </body>
 </html>
