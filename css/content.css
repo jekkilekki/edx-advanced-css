@@ -1,0 +1,145 @@
+/*------------------------------------------------
+# Site Content
+------------------------------------------------*/
+/*------------------------------------------------
+## About
+------------------------------------------------*/
+.content-box {
+	max-width: 72rem;
+	margin: 0 auto;
+	padding: 3rem 0;
+	perspective: 600px;
+}
+
+.about h2 {
+	display: block;
+	margin-top: -3rem;
+	font-size: var(--h5);
+	text-align: center;
+}
+
+.about-text {
+	margin-bottom: 4rem;
+}
+
+.about img {
+	width: 160px;
+	border-radius: 160px;
+	position: absolute;
+	left: 50%;
+	top: -160px;
+	transform: translateX(-50%);
+	transition: all 0.3s var(--ease-bounce);
+}
+
+.about img:hover {
+	cursor: pointer;
+	width: 200px;
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: -4px 4px 20px black;
+	transform: rotateY(35deg) skew(-20deg) rotateZ(-20deg) translateX(-10rem) translateY(-4rem) rotateX(5deg);
+}
+
+/*------------------------------------------------
+## Course Sections
+------------------------------------------------*/
+.class-section-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 300px);
+	width: 100%;
+	text-shadow: var(--text-shadow-strong);
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	perspective: 1000px;
+}
+
+.card-inner {
+	width: 100%;
+	height: 100%;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+
+.card-face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	padding: 4rem;
+}
+
+.card-back {
+	transform: rotateY(180deg);
+}
+
+.card-inner:hover {
+	transform: rotateY(-180deg);
+}
+
+.class-section .sub-section-title {
+	font-size: var(--h6);
+	line-height: var(--h5);
+}
+
+.section-zero {
+
+}
+
+.section-zero .card-face {
+	background: var(--bg-gradient-img);
+}
+
+.section-one {
+	
+}
+
+.section-one .card-face {
+	background: var(--color-purple-dk);
+}
+
+.section-two {
+	
+}
+
+.section-two .card-face {
+	background: var(--color-bg-dk);
+}
+
+.section-three {
+	
+}
+
+.section-three .card-face {
+	background: var(--color-blue);
+}
+
+.section-four {
+	
+}
+
+.section-four .card-face {
+	background: var(--color-bg-dk);
+}
+
+.section-five {
+	
+}
+
+.section-five .card-face {
+	background: var(--color-blue-dk);
+}
+
+.section-six {
+	
+}
+
+.section-six .card-face {
+	background: url(https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_960_720.jpg);
+	background-position: center;
+	background-size: cover;
+}

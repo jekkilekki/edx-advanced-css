@@ -95,17 +95,6 @@ input:checked ~ .tab-content {
 /*------------------------------------------------
 ## Off-screen navigation
 ------------------------------------------------*/
-.site-main {
-	min-height: 100%;
-	min-width: 100%;
-	background: white;
-	position: relative;
-	top: 0;
-	bottom: 100%;
-	left: 0;
-	z-index: 1;
-}
-
 .navicon {
 	color: #101525;
 	left: .25rem;
@@ -198,10 +187,6 @@ nav.site-navigation {
 }
 
 /* Make the magic happen */
-.site-main {
-	transition: left 0.2s;
-}
-
 .nav-check:checked + .navicon,
 .nav-check:checked {
 	left: 2px;
