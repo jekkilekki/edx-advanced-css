@@ -210,13 +210,3 @@ nav.site-navigation {
 	left: 300px;
 	box-shadow: 0 0 5px 5px rgba(0,0,0,0.15);
 }
-
-.site-main {
-	width: 100vw;
-	height: 100vh;
-	background: white;
-}
-
-body {
-	overflow-x: hidden;
-}
