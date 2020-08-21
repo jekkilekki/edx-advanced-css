@@ -1,0 +1,42 @@
+/*------------------------------------------------
+# Site Footer
+------------------------------------------------*/
+.site-footer {
+	min-height: 50vh;
+	width: 100%;
+	padding: 4rem;
+}
+
+.site-footer .sub-section-title {
+	font-size: var(--h5);
+	text-align: center;
+	display: block;
+}
+
+.learning-content {
+	display: flex;
+	justify-content: space-around;
+}
+
+.learning-content ol {
+	margin: 1rem 2rem;
+}
+
+@media screen and (max-width: 40rem) {
+	.learning-content {
+		display: block;
+	}
+
+	.learning-content ol {
+		margin-bottom: 2rem;
+	}
+}
+
+.copyright {
+	text-align: center;
+	color: var(--color-yellow);
+	position: absolute;
+	bottom: 0;
+	height: 36px;
+	width: 100%;
+}
