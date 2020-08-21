@@ -73,7 +73,7 @@ input {
 	padding: 0 5px;
 	color: white;
 	transform: rotate(-10deg);
-	left: -2.6em;
+	left: -.6em;
 	font-size: 0.8em;
 	line-height: 1.8em;
 }
@@ -121,8 +121,8 @@ input:checked ~ .tab-content {
 .navicon:before,
 .navicon:after {
 	background: transparent;
-	border-bottom: 2px solid #101525;
-	border-top: 1px solid #101525;
+	border-bottom: 2px solid var(--color-white);;
+	border-top: 1px solid var(--color-white);;
 	content: '';
 	height: 7px;
 	position: fixed;
@@ -156,6 +156,7 @@ input:checked ~ .tab-content {
 .nav-check:checked + .navicon:before,
 .nav-check:checked + .navicon:after {
 	background: #101525;
+	background: var(--color-white);
 	border: none;
 	height: 2px;
 	left: 0.6875rem;
@@ -209,4 +210,12 @@ nav.site-navigation {
 .nav-check:checked ~ .site-main {
 	left: 300px;
 	box-shadow: 0 0 5px 5px rgba(0,0,0,0.15);
+}
+
+/*------------------------------------------------
+## Social navigation
+------------------------------------------------*/
+.social-navigation li {
+	display: inline-block;
+	margin-left: 1rem;
 }
